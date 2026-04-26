@@ -1,193 +1,68 @@
-# Cmd_SoundBoard
+# Project README
 
+## Overview
+This project is a C application that demonstrates the use of a soundboard library across multiple platforms: Linux, Windows, Wine (Windows compatibility on Linux), and WebAssembly. The application initializes a soundboard with specified parameters, starts it in a separate thread, sets a buffer of random values to play, and then joins the thread before cleaning up.
 
-## Project Overview
+## Features
+- Cross-platform support: Linux, Windows, Wine, and WebAssembly.
+- Initialization of a soundboard with configurable parameters (channels, bits per sample, sample rate).
+- Playback of a simple buffer in a separate thread.
 
-This project implements specialized functionality related to soundboard.
-
-## Core Components
-
-### Main Functionality
-- Implements core algorithms for soundboard
-- Efficient data structures
-- Optimized performance
-- Clean code organization
-
-### Technical Features
-- C/C++ implementation
-- Dynamic memory management
-- Platform-independent design
-- Real-time capable
-
-### Architecture
-- Module separation
-- Clear interface design
-- Proper abstraction layers
-- Extensible design
-
-## Use Cases
-- Production systems
-- Educational purposes
-- Research applications
-- Performance-critical operations
-
-## Performance Characteristics
-- Optimized algorithms
-- Efficient memory usage
-- Scalable architecture
-- Minimal overhead
-
-## Implementation Quality
-- Well-organized code
-- Meaningful naming
-- Proper error handling
-- Memory management
-
-## Build and Deployment
-- Standard C/C++ compilation
-- Makefile-based building
-- Cross-platform support
-- Easy integration
-
-
-## Building the Project
+## Project Structure
 
 ### Prerequisites
-- C/C++ Compiler (GCC, Clang, or MSVC)
+- C/C++ Compiler and Debugger (GCC, Clang)
 - Make utility
 - Standard development tools
+- Libraries needed:
+  - Linux: ALSA for audio handling.
+  - Windows & Wine: No specific libraries required as the project is cross-platform compatible.
+  - WebAssembly: No external libraries are required.
 
-### Build Steps
+## Build & Run
 
-1. Navigate to project directory:
-```bash
-cd Cmd_SoundBoard
-```
-
-2. Build the project:
-```bash
-make -f Makefile.(os) all
-```
-
-3. For clean rebuild:
-```bash
-make -f Makefile.(os) clean
-make -f Makefile.(os) all
-```
-
-4. If there are ./bin and ./libs directories, build libs with:
-```bash
-make -f Makefile.(os) cleanlib
-make -f Makefile.(os) lib
-```
-
-### Build Options
-```bash
-make -f Makefile.(os) all         # build output
-make -f Makefile.(os) do        # build + exe output
-make -f Makefile.(os) clean   # Remove build artifacts
-```
-
-## Running the Project
-
-Execute the compiled binary:
+### Linux
+To build and run on Linux:
 
 ```bash
-./build/Main(.exe)
+cd <Project>
+make -f Makefile.linux all       # build output
+make -f Makefile.linux do        # build + exe output
+make -f Makefile.linux clean      # Remove build artifacts
+make -f Makefile.linux exe        # Execute it with make
 ```
 
-Or using make:
+### Windows
+To build and run on Windows:
+
 ```bash
-make -f Makefile.(os) exe
+cd <Project>
+make -f Makefile.windows all       # build output
+make -f Makefile.windows do        # build + exe output
+make -f Makefile.windows clean      # Remove build artifacts
+make -f Makefile.windows exe        # Execute it with make
 ```
 
-## Project Organization
+### Wine (Windows Compatibility on Linux)
+To build and run on Linux using Wine:
 
+```bash
+cd <Project>
+make -f Makefile.wine all         # build output
+make -f Makefile.wine do          # build + exe output
+make -f Makefile.wine clean        # Remove build artifacts
+make -f Makefile.wine exe          # Execute it with make
 ```
-Cmd_SoundBoard/
-├── src/
-│   ├── Main.c          # Entry point
-│   └── *.c             # Implementation files
-├── Makefile            # Build configuration
-└── README.md           # This file
+
+### WebAssembly (Emscripten)
+To build and run on the web using Emscripten:
+
+```bash
+cd <Project>
+make -f Makefile.web all           # build output
+make -f Makefile.web do            # build + exe output
+make -f Makefile.web clean          # Remove build artifacts
+make -f Makefile.web exe            # Execute it with make (requires wasmtime)
 ```
 
-## Technical Details
-
-### Language: C/C++
-- Performance-oriented
-- Direct hardware access where needed
-- Memory efficient
-- Widely portable
-
-### Key Technologies
-- Standard C library
-- System-specific libraries as needed
-- Algorithm optimization
-- Efficient data structures
-
-### Code Quality
-- Clean, readable implementation
-- Proper error handling
-- Resource management
-- Well-documented algorithms
-
-## Development Notes
-
-### Architecture Decisions
-- Modular design for reusability
-- Efficient algorithms for performance
-- Clear separation of concerns
-- Extensible structure
-
-### Performance Optimizations
-- Algorithm efficiency
-- Memory layout optimization
-- Cache-conscious programming
-- Minimal overhead
-
-### Portability
-- Cross-platform compatible
-- Platform-specific optimizations where possible
-- Standard library usage
-- No external dependencies (where feasible)
-
-## Troubleshooting
-
-### Build Issues
-- Ensure compiler is installed
-- Check file paths and permissions
-- Verify Make installation
-- Review compiler error messages
-
-### Runtime Issues
-- Check input data validity
-- Verify file accessibility
-- Ensure sufficient memory
-- Review output format
-
-### Performance Issues
-- Check compiler optimization flags
-- Profile hot code paths
-- Review algorithm complexity
-- Consider input size
-
-## Future Improvements
-
-Potential enhancements:
-- Additional optimization opportunities
-- Extended functionality
-- Platform-specific optimizations
-- Performance profiling
-
-## References
-
-For technical background:
-- Algorithm textbooks
-- Computer science references
-- Language documentation
-- Online educational resources
-
----
-
-*Project implementing practical algorithms and data structures in C/C++*
+These commands will help you build and execute the project on the specified platforms.
